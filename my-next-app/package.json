@@ -1,0 +1,52 @@
+{
+  "name": "my-next-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "next": "15.1.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sass": "^1.83.4"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.4",
+    "@eslint/eslintrc": "^3",
+    "@storybook/addon-a11y": "^8.5.0",
+    "@storybook/addon-essentials": "8.5",
+    "@storybook/addon-interactions": "^8.5.0",
+    "@storybook/addon-links": "8.5",
+    "@storybook/addon-onboarding": "^8.5.0",
+    "@storybook/blocks": "^8.5.0",
+    "@storybook/nextjs": "8.5",
+    "@storybook/react": "8.5",
+    "@storybook/test": "^8.5.0",
+    "@storybook/testing-library": "^0.2.2",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "15.1.5",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.2",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-storybook": "^0.11.2",
+    "prettier": "^3.4.2",
+    "storybook": "^8.5.0",
+    "storybook-addon-html-validator-w3c": "^3.0.3",
+    "typescript": "^5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  }
+}
