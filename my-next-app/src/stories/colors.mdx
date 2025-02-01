@@ -1,0 +1,121 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import { useState, useEffect } from 'react';
+
+<Meta title="Colors" />
+
+# 🎨 Colors (컬러 가이드)
+
+## 라이트 모드 vs 다크 모드
+
+export const ActionButton = () => {
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+  return (
+    <button onClick={toggleTheme} className="theme-toggle-btn">
+      {theme === 'light' ? '🌙 다크 모드' : '🌞 라이트 모드'}
+    </button>
+  );
+};
+
+
+
+export const lightColors = [
+  { name: 'Primary', hex: '#007bff' },
+  { name: 'Secondary', hex: '#6c757d' },
+  { name: 'Success', hex: '#28a745' },
+  { name: 'Danger', hex: '#dc3545' },
+  { name: 'Warning', hex: '#ffc107' },
+  { name: 'Info', hex: '#17a2b8' },
+];
+
+
+export const darkColors = [
+  { name: 'Primary', hex: '#375a7f' },
+  { name: 'Secondary', hex: '#444' },
+  { name: 'Success', hex: '#218838' },
+  { name: 'Danger', hex: '#c82333' },
+  { name: 'Warning', hex: '#e0a800' },
+  { name: 'Info', hex: '#138496' },
+];
+
+
+<div className="color-grid">
+  <ActionButton />
+  {/* 라이트 모드 컬러 */}
+  <div>
+    <h3>🌞 Light Mode</h3>
+    {lightColors.map((color) => (
+      <div key={color.name} className="color-box">
+        <div
+          className="color-preview"
+          style={{ backgroundColor: color.hex }}
+        />
+        <p>
+          {color.name} - {color.hex}
+        </p>
+      </div>
+    ))}
+  </div>
+
+  {/* 다크 모드 컬러 */}
+  <div className="dark-mode-container">
+    <h3 className="dark-mode-text">🌙 Dark Mode</h3>
+    {darkColors.map((color) => (
+      <div key={color.name} className="color-box">
+        <div
+          className="color-preview"
+          style={{ backgroundColor: color.hex }}
+        />
+        <p className="dark-mode-text">
+          {color.name} - {color.hex}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+<style>
+{`
+/* 전체 컨테이너 */
+.color-grid h3{
+ 
+}
+
+/* 개별 컬러 박스 */
+.color-box {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 10px;
+}
+
+/* 색상 미리보기 박스 */
+.color-preview {
+width: 50px;
+height: 50px;
+border-radius: 8px;
+}
+
+/* 다크 모드 배경 */
+.dark-mode-container {
+background-color: #222;
+padding: 10px;
+border-radius: 8px;
+color: white;
+}
+
+/* 다크 모드 텍스트 */
+.dark-mode-text {
+color: white;
+}
+
+`}
+</style>
